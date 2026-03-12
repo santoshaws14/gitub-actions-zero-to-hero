@@ -14,11 +14,11 @@ greet:
 
   # This is github runner, each job runs on a runner
   runs-on: ubuntu-latest
-    steps:
-      - name: say hello to users
-        run: echo "Hello Dosto"
-      - name: say hello to username
-        run: echo "hello $USER"
+  steps:
+    - name: say hello to users
+      run: echo "Hello Dosto"
+    - name: say hello to username
+      run: echo "hello $USER"
 
 show-version:
   runs-on: ubuntu-latest
