@@ -10,19 +10,20 @@ jobs:
 
 # This is the name of the job
 greet:
+  
 
   # This is github runner, each job runs on a runner
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
-  # 
-    steps:
-      - name: say hello to users
-        run: echo "Hello Dosto"
-      - name: say hello to username
-        run: echo "hello $USER"
+
+   steps:
+     - name: say hello to users
+       run: echo "Hello Dosto"
+     - name: say hello to username
+      run: echo "hello $USER"
 
 show-version:
   runs-on: ubuntu-latest
   steps:
-      - name: show what is the version of python, docker, etc..
-        run: docker --version && python --version
+    - name: show what is the version of python, docker, etc..
+      run: docker --version && python --version
