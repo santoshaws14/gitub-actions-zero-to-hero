@@ -3,10 +3,12 @@ name: Portfolio
 on:
     push:
         branches: [main]
+    workflow_dispatch:
 
 permissions:
     pages: write
     id-token: write
+    contents: read
 
 jobs:
     deploy:
@@ -17,7 +19,7 @@ jobs:
             url: ${{steps.deployment.outputs.page_url}}
         steps:
             # get access to your Portfolio code vai pre-built actions
-            # clone or checks  out the code where this workflow is written
+            # clone or checks  out   the code where this workflow is written
             # STEP 1
             - name: Checkout code
               uses: actions/checkout@v4
@@ -31,6 +33,8 @@ jobs:
             # STEP 3
             - name: Upload static files
               uses: actions/upload-pages-artifact@v4
+              with:
+                path: "."
 
             # Make page Live
             # STEP 4
